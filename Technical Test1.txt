@@ -1,0 +1,33 @@
+//created a div under the second div of <div class="cards__wrapper cards__third">
+to add a label "Recommended" to the luggage 20kg.
+
+
+
+<div style="margin-left:100px;
+padding-top: initial;
+padding-right:15px;
+padding-left:15px;
+margin-top: -10px;height: 10px;
+">
+<label id="label" style="position: inherit;
+padding-top: 1px;
+background-color: #aad700;
+padding: 2px;
+color: #092a5e;
+font-size: 16px;
+font-weight: bold;"></label>
+</div>
+
+JS
+-----------
+// Taking a language from dataLayer and added innerText to label according to the language.
+
+let value = (function lable(){
+  let lang = dataLayer[0].page.language
+ let result = (lang === 'en') ? "RECOMMENDED" : 
+             (lang === 'nl_BE') ? "AANBEVOLEN" :
+             (lang === 'fr_BE') ? "RECOMMANDÉ" : "" ;
+console.log(lang,result)
+return result
+}());
+document.getElementById("label").innerHTML = value.

@@ -1,0 +1,25 @@
+
+var array_span =document.getElementsByClassName('ResultListItemV2__deposit')
+
+// tried to get the array of spans(array_span) using "getElementsByClassName" method.
+
+var discount_text= [];
+array_span.forEach((ele,i)=> {discount_text.push(ele.innerText)})
+//From array_span seperated the text and stored it in a new array "discount_text".
+
+var disc_incl_text = discount_text.filter(line => line.includes("Includes"))
+// From discount_text filterd the specific discount elements from deposit elements.
+
+var disc_price =[]
+disc_incl_text.forEach(text => {disc_price.push(parseInt(text.slice(10)))})
+// Created an array of discount prices "disc_price"
+
+
+disc_price.forEach((price, i) => {
+  if (price< 200) {
+    document
+      .getElementsByClassName('ResultListItemV2__deposit')
+      [i].classList.add('hide'); //Using existing CSS class hide - to hide
+  } 
+});
+// checked each value which is less than 200 and added CSS class to it dynamically to hide the element.
