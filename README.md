@@ -1,1 +1,1 @@
-# TUI-Solutions
+Solutions
